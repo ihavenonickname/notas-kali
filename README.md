@@ -7,7 +7,7 @@ Anotações para que eu não precise decorar tudo que faço.
 Habilitar bluetooth
 </summary>
 
-# Habilitar bluetooth
+## Habilitar bluetooth
 
 O Kali vem com um pacote de dependências para interagir com conexões bluetooth e um serviço configurado.
 
@@ -42,7 +42,7 @@ sudo systemctl start bluetooth.service
 Instalar libgconf-2-4
 </summary>
 
-# Instalar libgconf-2-4
+## Instalar libgconf-2-4
 
 Este dependência não está mais disponível nos repositórios ppa do Kali e é requerida por vários aplicativos proprietários, tais como Discord e Spotify.
 
@@ -71,7 +71,7 @@ sudo apt install ./libgconf-2-4_3.2.6-8_amd64.deb
 Instalar Docker
 </summary>
 
-# Instalar Docker
+## Instalar Docker
 
 **Adicionar fonte ppa do Docker**
 
