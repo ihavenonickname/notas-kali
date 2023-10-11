@@ -119,3 +119,43 @@ docker run hello-world
 - https://www.kali.org/docs/containers/installing-docker-on-kali/
 - https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
 </details>
+
+---
+
+<details>
+<summary>
+Configurar HTTPS local
+</summary>
+
+## Configurar HTTPS local
+
+**Gerar chave e certificado autoassinado**
+
+```bash
+openssl genpkey -algorithm RSA -out mykey.key
+openssl req -x509 -new -key mykey.key -out mycert.crt -days 365
+```
+
+**(Opcional) Mover chave e certificado para a pasta do nginx**
+
+```bash
+cp mykey.key /etc/nginx/certs
+cp mycert.crt /etc/nginx/certs
+```
+
+**Configurar nginx para escutar a porta 443 no modo SSL**
+
+```conf
+http {
+    server {
+        listen 443 ssl;
+
+        ssl_certificate /etc/nginx/certs/certificate.crt;
+        ssl_certificate_key /etc/nginx/certs/private-key.key;
+
+        ...
+    }
+}
+```
+
+</details>
